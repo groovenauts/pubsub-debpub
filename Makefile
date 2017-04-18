@@ -33,10 +33,10 @@ build:
 	done
 
 release: build
-	ghr -u groovenauts -r blocks-gcs-proxy --replace --draft ${VERSION} pkg
+	ghr -u groovenauts -r pubsub-devpub --replace --draft ${VERSION} pkg
 
 prerelease: build
-	ghr -u groovenauts -r blocks-gcs-proxy --replace --draft --prerelease ${VERSION} pkg
+	ghr -u groovenauts -r pubsub-devpub --replace --draft --prerelease ${VERSION} pkg
 
 version:
 	echo ${VERSION}

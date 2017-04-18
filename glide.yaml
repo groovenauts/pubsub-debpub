@@ -1,4 +1,4 @@
-package: github.com/groovenauts/blocks-gcs-proxy/examples/devpub
+package: github.com/groovenauts/pubsub-devpub
 import:
 - package: github.com/Sirupsen/logrus
 - package: github.com/urfave/cli
