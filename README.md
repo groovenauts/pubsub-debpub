@@ -1,5 +1,8 @@
 # pubsub-devpub
 
+[![Build Status](https://secure.travis-ci.org/groovenauts/pubsub-devpub.png)](https://travis-ci.org/groovenauts/pubsub-devpub)
+
+
 `pubsub-devpub` helps you to publish lots of messages to `Google Cloud Pubsub` topics.
 `pubsub-devpub` works concurrently with `--number` option.
 `pubsub-devpub` publishes messages for each line of given file like this:
