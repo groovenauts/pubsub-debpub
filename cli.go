@@ -14,8 +14,8 @@ import (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "blocks-gcs-proxy"
-	app.Usage = "github.com/groovenauts/blocks-gcs-proxy"
+	app.Name = "pubsub-devpub"
+	app.Usage = "github.com/groovenauts/pubsub-devpub"
 	app.Version = VERSION
 
 	app.Flags = []cli.Flag{

@@ -31,7 +31,7 @@ export PATH=$PATH:$GOPATH/bin
 ```bash
 $ ./pubsub-devpub --help
 NAME:
-   blocks-gcs-proxy - github.com/groovenauts/blocks-gcs-proxy
+   pubsub-devpub - github.com/groovenauts/pubsub-devpub
 
 USAGE:
    pubsub-devpub [global options] command [command options] [arguments...]
