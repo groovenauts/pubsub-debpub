@@ -11,3 +11,7 @@ import:
 - package: google.golang.org/api
   subpackages:
   - pubsub/v1
+testImport:
+- package: github.com/stretchr/testify
+  subpackages:
+  - assert
