@@ -13,7 +13,7 @@
 {"topic":"projects/proj-dummy-999/topics/devpub-target-topic","attributes":{"download_files":"[\"gs://test-bucket1/path/to/file000003\"]"}}
 ```
 
-Now `pubsub-debpub` supports [JSON Lines](http://jsonlines.org/) only.
+Now `pubsub-devpub` supports [JSON Lines](http://jsonlines.org/) only.
 
 
 ## Install
