@@ -10,14 +10,14 @@ import (
 )
 
 type Message struct {
-	Topic string `json:"topic"`
-	Data string `json:"data,omitempty"`
+	Topic      string            `json:"topic"`
+	Data       string            `json:"data,omitempty"`
 	Attributes map[string]string `json:"attributes,omitempty"`
 }
 
 type Worker struct {
 	service *pubsub.Service
-	lines chan string
+	lines   chan string
 	done    bool
 	error   error
 }
@@ -72,7 +72,7 @@ func (w *Worker) process(line string) error {
 		Messages: []*pubsub.PubsubMessage{
 			&pubsub.PubsubMessage{
 				Attributes: msg.Attributes,
-				Data: base64.StdEncoding.EncodeToString([]byte(msg.Data)),
+				Data:       base64.StdEncoding.EncodeToString([]byte(msg.Data)),
 			},
 		},
 	})
@@ -88,6 +88,6 @@ func (w *Worker) process(line string) error {
 
 	flds["MessageIds"] = res.MessageIds
 	log.WithFields(flds).Infoln("Publish successfully")
-	
+
 	return nil
 }

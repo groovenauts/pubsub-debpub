@@ -1,4 +1,4 @@
-package: github.com/groovenauts/blocks-gcs-proxy/examples/devpub
+package: github.com/groovenauts/pubsub-devpub
 import:
 - package: github.com/Sirupsen/logrus
 - package: github.com/urfave/cli
@@ -11,3 +11,7 @@ import:
 - package: google.golang.org/api
   subpackages:
   - pubsub/v1
+testImport:
+- package: github.com/stretchr/testify
+  subpackages:
+  - assert

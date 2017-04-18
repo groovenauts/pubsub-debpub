@@ -8,14 +8,14 @@ import (
 	"golang.org/x/net/context"
 	"golang.org/x/oauth2/google"
 
-	pubsub "google.golang.org/api/pubsub/v1"
 	log "github.com/Sirupsen/logrus"
+	pubsub "google.golang.org/api/pubsub/v1"
 )
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "blocks-gcs-proxy"
-	app.Usage = "github.com/groovenauts/blocks-gcs-proxy"
+	app.Name = "pubsub-devpub"
+	app.Usage = "github.com/groovenauts/pubsub-devpub"
 	app.Version = VERSION
 
 	app.Flags = []cli.Flag{
@@ -24,7 +24,7 @@ func main() {
 			Usage: "Messages filepath (.jsonl JSON Lines format)",
 		},
 		cli.IntFlag{
-			Name: "number, n",
+			Name:  "number, n",
 			Usage: "Number of go routine to publish",
 			Value: 10,
 		},
@@ -63,13 +63,13 @@ func run(c *cli.Context) error {
 		}
 		workers = append(workers, worker)
 	}
-	
+
 	workers.process(c.String("filepath"))
 
 	return nil
 }
 
-func NewPubsubService() (*pubsub.Service, error){
+func NewPubsubService() (*pubsub.Service, error) {
 	ctx := context.Background()
 
 	// https://github.com/google/google-api-go-client#application-default-credentials-example
