@@ -1,5 +1,5 @@
-hash: 81c2400ed61ae1ad48ef45900f66ce6e38e810c80c85863c950ce59604c4c0fb
-updated: 2017-04-18T12:01:21.401603005+09:00
+hash: f1a71dc9096e253e3fc967a28d0e8f59ac323b7cce2ce7f76858a8837618ebc8
+updated: 2017-04-19T10:27:44.492871291+09:00
 imports:
 - name: cloud.google.com/go
   version: 81b7822b1e798e8f17bf64b59512a5be4097e966
@@ -12,6 +12,8 @@ imports:
   - proto
 - name: github.com/googleapis/gax-go
   version: da06d194a00e19ce00d9011a13931c3f6f6887c7
+- name: github.com/groovenauts/blocks-variable
+  version: 833d2f1e70b82c8a0a1149827906ab32aed40276
 - name: github.com/Sirupsen/logrus
   version: 547e984ad93a90192134fc0fdb57a468edb514fe
 - name: github.com/urfave/cli
@@ -71,6 +73,14 @@ imports:
   - tap
   - transport
 testImports:
+- name: github.com/davecgh/go-spew
+  version: 04cdfd42973bb9c8589fd6a731800cf222fde1a9
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib
 - name: github.com/stretchr/testify
   version: 4d4bfba8f1d1027c4fdbe371823030df51419987
   subpackages:
