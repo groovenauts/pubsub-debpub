@@ -53,6 +53,62 @@ GLOBAL OPTIONS:
    --version, -v               print the version
 ```
 
+## Messages file
+
+### Fields
+
+| Name | Type | Required | Description |
+|------|------|----------|-------------|
+| topic | string | True | Topic name to publish |
+| attributes | map[string]string | True | Attributes of message to publish |
+| data  | string | False | Data of message to publish |
+| command | []string | False | Command to run after publishing |
+
+#### Command Template
+
+You can use template for `command` field. A keyword within `%{...}` is expanded.
+
+| Keyword | Type | Meaning |
+|---------|------|---------|
+| topic   | string | Topic name to publish |
+| data  | string | Data of message to publish |
+| attributes | map[string]string | Attributes of message to publish |
+| attrs      | map[string]string | Alias for `attributes`
+| message_id | string | Message ID of published message |
+| msgId      | string | Alias for message_id |
+
+You can specified the key for keyworkd whose type is map[string]string like this:
+
+```
+%{attrs.foo}
+```
+
+
+### Example
+
+The file given must be a `.jsonl` file which has `JSON` format lines.
+
+```json
+{"topic":"projects/proj-dummy-999/topics/devpub-target-topic","attributes":{"key":"must be string","value":"must be string","download_files":"[\"gs://test-bucket1/path/to/file000001\"]"},"data":"message_t_publish","command":["echo","Message ID: %{msgId}"]}
+```
+
+The following text is the same one in pretty format.
+
+
+```json
+{
+  "topic":"projects/proj-dummy-999/topics/devpub-target-topic",
+  "attributes":{
+      "key":"must be string",
+      "value":"must be string",
+      "download_files":"[\"gs://test-bucket1/path/to/file000001\"]"
+  },
+  "data":"message_t_publish",
+  "command":["echo","Message ID: %{msgId}"]
+}
+```
+
+
 ## How to build
 
 ```
