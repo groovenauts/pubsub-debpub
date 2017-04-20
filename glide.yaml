@@ -1,5 +1,6 @@
 package: github.com/groovenauts/pubsub-devpub
 import:
+- package: github.com/groovenauts/blocks-variable
 - package: github.com/Sirupsen/logrus
 - package: github.com/urfave/cli
 - package: golang.org/x/net
